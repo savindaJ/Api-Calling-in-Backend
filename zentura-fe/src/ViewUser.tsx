@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+export default function viewUser(users: any) {
 
-export default function viewUser() {
-
-    
+    // const [user, setUser] = React.useState({});
 
   return (
     <div className="p-5">
@@ -13,33 +11,29 @@ export default function viewUser() {
         //   navigate("/save");
         }}
         >Add User</button>
+        
       <table className="table w-100 p-4">
         <thead>
+           
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Given Name</th>
             <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+        {users.ussers.map((user: any) => {
+                return (
+                    <tr>
+                        {/* <th scope="row">{user.id}</th> */}
+                        <td>{user.given_name}</td>
+                        <td>{user.middle_name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.phone_number}</td>
+                    </tr>
+                );
+            })}
         </tbody>
       </table>
     </div>
